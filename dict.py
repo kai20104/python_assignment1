@@ -64,6 +64,8 @@ def word_not_found():
 
 ### logic ###
 
+get_json_dictionary(json_file_name)
+
 print(welcome_text)
 user_input_word = input()
 translation = find_translation(user_input_word)
@@ -73,33 +75,7 @@ if(translation == "-"):
 else:
     print_translation()
 
-
-
-
-
-
-
-#json.dump(dictionary, file_handler)
-
-#question_fi_word = "Anna suomenkielinen sana lisättäväksi sanakirjaan:"
-#print(question_fi_word)
-#fi_word = input()
-#question_en_word = "Anna  englannin kielinen käännös sanalle: % s" % fi_word
-#print(question_en_word)
-#en_word = input()
-
-
-
-
-#print("Suomisana: % s ja eng sana % s" % (fi_word, en_word))
-
-#file_handler = open(json_file_name, "a")
-# väsy!!! json.dump
-
-
-
-
-
+print(get_json_dictionary("json_dictionary.json"))
 
 
 
