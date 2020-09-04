@@ -25,10 +25,6 @@ Please enter a word in English or Finnish:
 
 ### functions ###
 
-def get_user_word_input():
-    word = input()
-    return word
-
 def find_translation(key_or_value):
     result = "-"
     keys = dictionary.keys()
@@ -41,7 +37,7 @@ def find_translation(key_or_value):
 
     return result
 
-def display_translation():
+def print_translation():
     print("Käännos sanalle %s = %s") % user_input_word, translation
 
 def get_json_dictionary(file_name):
@@ -50,12 +46,6 @@ def get_json_dictionary(file_name):
     file_handler.close()
     return dictionary
 
-#
-# The program starts here. Print welcome text and usage info.
-#
-def print_welcome_message():    
-
-    print(welcome_text)
 
 # function to return key for any value 
 def get_key(val): 
@@ -68,18 +58,20 @@ def get_key(val):
 
 def word_not_found():
     print(word_not_found_text)
+    user_input_word = input()
+    print("Annoit sanan == " + user_input_word)
 
 
 ### logic ###
 
 print(welcome_text)
-user_input_word = get_user_word_input()
+user_input_word = input()
 translation = find_translation(user_input_word)
 
 if(translation == "-"):
     word_not_found()
 else:
-    display_translation()
+    print_translation()
 
 
 
